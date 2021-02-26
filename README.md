@@ -10,14 +10,14 @@ dégradé de gris de chaque pixel
 * knn.py contient un début de programme, qui réalise l'ouverture des chiers
 * image.py permet de convertir une image en format pgm
 
-### écrire une fonction
+1. écrire une fonction
 distance
 qui, étant données deux images (sous forme de listes), donne la
 distance entre les deux. On peut par exemple prendre la somme (pour tous les pixels) de l'écart
 entre les deux codes dégradés de gris,
-### compléter le programme pour qu'il associe à une image de test la valeur (3 ou 7) du plus proche
+2. compléter le programme pour qu'il associe à une image de test la valeur (3 ou 7) du plus proche
 voisin ; le programme doit au nal acher cette image est un 7) ou cette image est un 3
-### adaptez votre programme pour qu'il associe maintenant à une image de test la valeur majoritaire
+3. adaptez votre programme pour qu'il associe maintenant à une image de test la valeur majoritaire
 parmi les 5 plus proches voisins. Attention à ne pas eacer le travail de la question précédente,
 soit en créant une nouvelle fonction (une pour le plus proche, une pour les 5 plus proches), soit en
 faisant les modications dans un nouveau chier.
