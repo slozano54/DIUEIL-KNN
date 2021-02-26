@@ -27,4 +27,3 @@ for image in listetesting:
 
 print(listetraining) # juste pour tester, on a bien une liste de listes d'entiers
 
-
