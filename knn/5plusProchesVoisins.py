@@ -10,12 +10,14 @@ On peut par exemple prendre la somme (pour tous les pixels) de l'écart entre le
 pass
 
 import sys
+import copy
 
 from distance import *
+from plusProcheVoisin import *
 
-def plusProcheVoisin(image2test:list,imagesref:list)->list:
+def cinqPlusProcheVoisin(image2test:list,imagesref:list)->list:
     """
-    Fonction qui renvoie le plus proche voisin d'une liste à tester
+    Fonction qui renvoie les 5 plus proches voisins d'une liste à tester
 
     **Paramètres** 
     
@@ -31,7 +33,7 @@ def plusProcheVoisin(image2test:list,imagesref:list)->list:
 
     **Postconsitions** ...
 
-    **Sorties** le plus proche voisin parmi les images de référence et son rang
+    **Sorties** le plus proche voisin parmi les images de référence
     """
     pass
 
@@ -41,13 +43,14 @@ def plusProcheVoisin(image2test:list,imagesref:list)->list:
     # if (code1 not in range(256) or code2 not in range(256)):
     #     raise ValueError("L'un des deux paramètres au moins n'est pas un code de dégradés de gris")
     # Préconditions
-
-    nbRefs = len(imagesref) # nombre d'images de référence
-    ppv = [imagesref[0],0] # on initialise avec la premiere image 
-    # On teste toutes les images si on en trouve une plus proche on change ppv
-    for i in range(nbRefs):
-        if distance(image2test[1:],imagesref[i][1:])<distance(image2test[1:],ppv[0][1:]):
-            ppv = [imagesref[i],i]
+    
+    references = copy.deepcopy(imagesref)    
+    i=0
+    five_ppv = []    
+    while i<5:        
+        five_ppv.append(plusProcheVoisin(image2test,references))
+        references.pop(five_ppv[i][1])        
+        i +=1
     
     # Postconditions
     # assert isinstance(ecart,int),"l'écart n'est pas un entier"
@@ -55,23 +58,21 @@ def plusProcheVoisin(image2test:list,imagesref:list)->list:
     #     raise ValueError("l'écart n'est pas positif")
     # Postconditions
 
-    return ppv
+    return five_ppv
 
-def affichage3ou7(image:list)->str:
+def plusDe3ou7(tab:list)->str:
     """
-    Fonction qui renvoie une chaine de caractère selon le plus proche voisin
+    Fonction qui renvoie une chaine selon la valeur majoritaire parmi 5 plus proches voisins d'une liste à tester
 
     **Paramètres** 
     
-    - image le plus proche voisin d'une image à tester    
-
     **Préconditions** ...
 
     **Invariant** ...
 
     **Postconsitions** ...
 
-    **Sorties** Une chaine de caractère indiquant ce qu'est l'image, un 3 ou un 7
+    **Sorties** Une chaine de caracteres
     """
     pass
 
@@ -82,15 +83,26 @@ def affichage3ou7(image:list)->str:
     #     raise ValueError("L'un des deux paramètres au moins n'est pas un code de dégradés de gris")
     # Préconditions
     
-    is3ou7 = 'Selon le plus proche voisin, cette image est un '+image[0][0]
-
+    nb_3 = 0
+    nb_7 = 0
+    maxDe3ou7 = 'Selon les 5 plus proches voisins, cette images est un '
+    for i in range(len(tab)):        
+        if tab[i][0][0]=='3':
+            nb_3 +=1
+        if tab[i][0][0]=='7':
+            nb_7 +=1            
+    if (nb_3>nb_7):
+        maxDe3ou7 +='3'
+    else:
+        maxDe3ou7 +='7'
+          
     # Postconditions
     # assert isinstance(ecart,int),"l'écart n'est pas un entier"
     # if (ecart<0):
     #     raise ValueError("l'écart n'est pas positif")
     # Postconditions
 
-    return is3ou7    
+    return maxDe3ou7
 
 if __name__=="__main__":
     ##################################
@@ -109,4 +121,5 @@ if __name__=="__main__":
     for j in range(len(listetesting)):
         #print(plusProcheVoisin(listetesting[j],listetraining))
         print(affichage3ou7(plusProcheVoisin(listetesting[j],listetraining)))
+        print(plusDe3ou7(cinqPlusProcheVoisin(listetesting[j],listetraining)))
     
