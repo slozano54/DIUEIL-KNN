@@ -11,7 +11,7 @@ image = 'ressources/testing'
 for i in range(0,10):
         print('i : ',i)        
         f = open(image, "r")
-        cible = str(i+1)+'.pgm'
+        cible = 'ressources/'+str(i+1)+'.pgm'
         g = open(cible, "w")        
         #img = int(img)
         img = i
