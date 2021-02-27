@@ -100,15 +100,15 @@ if __name__=="__main__":
     # juste pour tester
     # à supprimer ensuite du module
     ##################################
-    train = open("ressources/training","r")
-    test = open("ressources/testing","r")    
+    # train = open("ressources/training","r")
+    # test = open("ressources/testing","r")    
 
-    l = train.readlines()
-    listetraining = [ligne.split() for ligne in l] 
+    # l = train.readlines()
+    # listetraining = [ligne.split() for ligne in l] 
           
-    l2 = test.readlines()
-    listetesting = [ligne.split() for ligne in l2]  
+    # l2 = test.readlines()
+    # listetesting = [ligne.split() for ligne in l2]  
 
-    for j in range(len(listetraining)):
-        print(distance(listetesting[0][1:],listetraining[j][1:]))
+    # for j in range(len(listetraining)):
+    #     print(distance(listetesting[0][1:],listetraining[j][1:]))
     
