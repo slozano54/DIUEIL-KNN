@@ -92,7 +92,7 @@ def affichage3ou7(image:list)->str:
     #     raise ValueError("L'un des deux paramètres au moins n'est pas un code de dégradés de gris")
     # Préconditions
     
-    is3ou7 = 'Selon le plus proche voisin, cette image est un '+image[0][0]
+    is3ou7 = ' est un '+image[0][0]
 
     # Postconditions
     # assert isinstance(ecart,int),"l'écart n'est pas un entier"
@@ -172,7 +172,7 @@ def plusDe3ou7(tab:list)->str:
     
     nb_3 = 0
     nb_7 = 0
-    maxDe3ou7 = 'Selon les 5 plus proches voisins, cette images est un '
+    maxDe3ou7 = ' est un '
     for i in range(len(tab)):        
         if tab[i][0][0]=='3':
             nb_3 +=1
@@ -207,6 +207,6 @@ if __name__=="__main__":
 
     for j in range(len(listetesting)):
         #print(plusProcheVoisin(listetesting[j],listetraining))
-        print(affichage3ou7(plusProcheVoisin(listetesting[j],listetraining)))
-        print(plusDe3ou7(cinqPlusProcheVoisin(listetesting[j],listetraining)))
+        print("Selon le plus proche voisin, l'image "+str(j+1)+affichage3ou7(plusProcheVoisin(listetesting[j],listetraining)))
+        print("Selon les 5 plus proches voisins, l'image "+str(j+1)+plusDe3ou7(cinqPlusProcheVoisin(listetesting[j],listetraining)))
     
