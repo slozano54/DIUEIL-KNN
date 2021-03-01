@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 #-*- coding: utf8 -*-
 """
-## écrire une fonction distance qui,
+## Distance
 
-étant données deux images (sous forme de listes), donne la distance entre les deux.
+écrire une fonction distance qui, étant données deux images (sous forme de listes), donne la distance entre les deux.
 
 On peut par exemple prendre la somme (pour tous les pixels) de l'écart entre les deux codes dégradés de gris.
 """
