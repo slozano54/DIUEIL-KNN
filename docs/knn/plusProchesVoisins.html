@@ -128,7 +128,7 @@ def affichage3ou7(image:list)-&gt;str:
     #     raise ValueError(&#34;L&#39;un des deux paramètres au moins n&#39;est pas un code de dégradés de gris&#34;)
     # Préconditions
     
-    is3ou7 = &#39;Selon le plus proche voisin, cette image est un &#39;+image[0][0]
+    is3ou7 = &#39; est un &#39;+image[0][0]
 
     # Postconditions
     # assert isinstance(ecart,int),&#34;l&#39;écart n&#39;est pas un entier&#34;
@@ -208,7 +208,7 @@ def plusDe3ou7(tab:list)-&gt;str:
     
     nb_3 = 0
     nb_7 = 0
-    maxDe3ou7 = &#39;Selon les 5 plus proches voisins, cette images est un &#39;
+    maxDe3ou7 = &#39; est un &#39;
     for i in range(len(tab)):        
         if tab[i][0][0]==&#39;3&#39;:
             nb_3 +=1
@@ -243,8 +243,8 @@ if __name__==&#34;__main__&#34;:
 
     for j in range(len(listetesting)):
         #print(plusProcheVoisin(listetesting[j],listetraining))
-        print(affichage3ou7(plusProcheVoisin(listetesting[j],listetraining)))
-        print(plusDe3ou7(cinqPlusProcheVoisin(listetesting[j],listetraining)))
+        print(&#34;Selon le plus proche voisin, l&#39;image &#34;+str(j+1)+affichage3ou7(plusProcheVoisin(listetesting[j],listetraining)))
+        print(&#34;Selon les 5 plus proches voisins, l&#39;image &#34;+str(j+1)+plusDe3ou7(cinqPlusProcheVoisin(listetesting[j],listetraining)))
     </code></pre>
 </details>
 </section>
@@ -298,7 +298,7 @@ if __name__==&#34;__main__&#34;:
     #     raise ValueError(&#34;L&#39;un des deux paramètres au moins n&#39;est pas un code de dégradés de gris&#34;)
     # Préconditions
     
-    is3ou7 = &#39;Selon le plus proche voisin, cette image est un &#39;+image[0][0]
+    is3ou7 = &#39; est un &#39;+image[0][0]
 
     # Postconditions
     # assert isinstance(ecart,int),&#34;l&#39;écart n&#39;est pas un entier&#34;
@@ -417,7 +417,7 @@ if __name__==&#34;__main__&#34;:
     
     nb_3 = 0
     nb_7 = 0
-    maxDe3ou7 = &#39;Selon les 5 plus proches voisins, cette images est un &#39;
+    maxDe3ou7 = &#39; est un &#39;
     for i in range(len(tab)):        
         if tab[i][0][0]==&#39;3&#39;:
             nb_3 +=1
