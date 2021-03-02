@@ -54,7 +54,7 @@ def main():
     print("-----------------------------------------------------")    
     print("")
     for j in range(len(listetesting)):
-        print("Selon ses 5 plus proches voisins, l'image "+str(j+1)+plusDe3ou7(cinqPlusProcheVoisin(listetesting[j],listetraining)))
+        print("Selon ses 5 plus proches voisins, l'image "+str(j+1)+plusDe3ou7(cinqPlusProchesVoisins(listetesting[j],listetraining)))
     print("=============================================================================")    
 
     print(".............................................................................")    
