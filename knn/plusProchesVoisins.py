@@ -1,14 +1,10 @@
 #!/usr/bin/python3
 #-*- coding: utf8 -*-
 """
-## compléter le programme 
-
-pour qu'il associe à une image de test la valeur (3 ou 7) du plus proche
+**Compléter le programme** pour qu'il associe à une image de test la valeur (3 ou 7) du plus proche
 voisin ; le programme doit au final afficher 'cette image est un 7' ou 'cette image est un 3'
 
-## adaptez votre programme 
- 
-pour qu'il associe maintenant à une image de test la valeur majoritaire
+**Adaptez votre programme** pour qu'il associe maintenant à une image de test la valeur majoritaire
 parmi les 5 plus proches voisins. Attention à ne pas effacer le travail de la question précédente,
 soit en créant une nouvelle fonction (une pour le plus proche, une pour les 5 plus proches), soit en
 faisant les modifications dans un nouveau fichier.
@@ -26,11 +22,11 @@ else:
 def isDistanceMin(image2test:list,imageMin:list,imagesref:list)->bool:
     """
     Fonction booléenne qui renvoie True si la distance entre image2test et imageMin
-    est inférieure ou égale à toutes les distances entre image2test et les éléments de imagesref
+    est inférieure ou égale à chaque distance entre image2test et un élément de imagesref
 
     **Paramètres**
 
-    - image2test est une liste d'entiers dont le premier élément est un ?
+    - image2test est une liste d'entiers dont le premier élément est un '?'
     - imageMin est une liste dont il faut tester si la distance à image2test est minimale
     - imagesref est l'échantillon d'images de référence
 
@@ -78,7 +74,7 @@ def isDistanceMin(image2test:list,imageMin:list,imagesref:list)->bool:
 
 def plusProcheVoisin(image2test:list,imagesref:list)->list:
     """
-    Fonction qui renvoie le plus proche voisin d'une liste à tester parmi un échantillon de référence
+    Fonction qui renvoie, parmi un echantillon de référence, le plus proche voisin d'une liste à tester.
 
     **Paramètres** 
     
@@ -98,7 +94,7 @@ def plusProcheVoisin(image2test:list,imagesref:list)->list:
     - le second un entier compris entre 0 et la taille de imagesref    
     - La distance avec image2test est minimale
 
-    **Sorties** le plus proche voisin parmi les images de référence et son indice dans imageref
+    **Sorties** le plus proche voisin parmi les images de référence et son indice dans imagesref
     """
     pass
 
@@ -141,7 +137,7 @@ def affichage3ou7(image:list)->str:
 
     **Paramètres** 
     
-    - image le plus proche voisin d'une image à tester    
+    - image : une liste contenant le plus proche voisin d'une image à tester    
 
     **Préconditions** 
     
@@ -174,12 +170,12 @@ def affichage3ou7(image:list)->str:
 
 def cinqPlusProchesVoisins(image2test:list,imagesref:list)->list:
     """
-    Fonction qui renvoie les 5 plus proches voisins d'une liste à tester
+    Fonction qui renvoie, parmi un echantillon de référence, les 5 plus proches voisins d'une liste à tester.
 
     **Paramètres** 
     
-    - image2test une liste d'entiers, premier élément : ?
-    - imagesref une liste de liste, premier élément  : 3 ou 7 
+    - image2test une liste d'entiers sauf le premier élément qui est '?'
+    - imagesref une liste de listes dont le premier élément  est '3' ou '7' 
 
     **Préconditions** 
 
@@ -230,7 +226,7 @@ def cinqPlusProchesVoisins(image2test:list,imagesref:list)->list:
 
 def plusDe3ou7(five_ppv_image2test:list)->str:
     """
-    Fonction qui renvoie une chaine selon la valeur majoritaire parmi 5 plus proches voisins d'une liste à tester
+    Fonction qui renvoie une chaine selon la valeur majoritaire parmi les 5 plus proches voisins d'une liste à tester
 
     **Paramètres** 
     
