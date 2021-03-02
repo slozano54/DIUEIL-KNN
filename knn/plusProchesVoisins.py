@@ -158,7 +158,7 @@ def affichage3ou7(image:list)->str:
 
     # Préconditions
     assert isinstance(image,list),"image n'est pas une  liste"
-    assert (image[0]=='3' or image[0]=='7'),"image n'est pas une image de l'échantillon de référence"
+    assert (image[0][0] == '3' or image[0][0] == '7'),"image n'est pas une image de l'échantillon de référence"
     for i in range(1,len(image)):
         if (int(image[i]) not in range(256)):
             raise ValueError("L'un des éléments de image au moins n'est pas un code de dégradés de gris")
