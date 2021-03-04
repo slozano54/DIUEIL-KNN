@@ -15,13 +15,23 @@ def ecart(code1:int,code2:int)->int:
     """
     Fonction qui retourne l'écart entre deux codes dégradés de gris.
 
-    **Paramètres** code1 et code2 deux entiers 
+    **Paramètres** 
 
-    **Préconditions** code1 et code2 sont des codes de dégradés de gris compris entre 0 et 255    
+    * code1 est un entier
+    * code2 est un entier
 
-    **Postconsitions** la fonction retourne un nombre positif
+    **Préconditions** 
+    
+    * code1 est un code de dégradés de gris compris entre 0 et 255    
+    * code2 est un code de dégradés de gris compris entre 0 et 255    
 
-    **Sorties** l'écart positif entre les codes de dégradés de gris    
+    **Postconsitions** 
+    
+    * la fonction retourne un nombre positif
+
+    **Sortie** 
+    
+    * l'écart positif entre les codes de dégradés de gris    
     """
     pass
 
@@ -46,18 +56,25 @@ def distance(image2test:list,imageref:list)->int:
     """
     Fonction qui retourne la somme des écarts (positifs) entre les pixels, pris deux à deux, de deux images en dégradés de gris.
 
-    **Paramètres** image2test et imageref deux listes d'entiers
+    **Paramètres** 
+    
+    * image2test est une liste d'entiers
+    * imageref est une liste d'entiers
 
     **Préconditions** 
 
-    - image2test et imageref sont des listes
-    - image2test et imageref ont le même nombre de pixels
-    - image2test et imageref ont des pixels dont le code est compris entre 0 et 255
+    * image2test et imageref sont des listes
+    * image2test et imageref ont le même nombre de pixels
+    * image2test et imageref ont des pixels dont le code est compris entre 0 et 255
 
 
-    **Postconsitions** la fonction retourne un nombre positif
+    **Postconsition** 
+    
+    * la fonction retourne un nombre positif
 
-    **Sorties** la distance qui vaut la somme des écarts positifs des pixels pris deux à deux
+    **Sortie** 
+    
+    * la distance qui vaut la somme des écarts positifs des pixels pris deux à deux
     """
     pass
 

@@ -49,6 +49,7 @@ pass
 import sys
 import copy
 
+#On fait les imports selon le contexte
 if __name__==&#34;__main__&#34;:
     from distance import *
 else:
@@ -61,19 +62,23 @@ def isDistanceMin(image2test:list,imageMin:list,imagesref:list)-&gt;bool:
 
     **Paramètres**
 
-    - image2test est une liste d&#39;entiers dont le premier élément est un &#39;?&#39;
-    - imageMin est une liste dont il faut tester si la distance à image2test est minimale
-    - imagesref est l&#39;échantillon d&#39;images de référence
+    * image2test est une liste d&#39;entiers dont le premier élément est un &#39;?&#39;
+    * imageMin est une liste dont il faut tester si la distance à image2test est minimale
+    * imagesref est l&#39;échantillon d&#39;images de référence
 
     **Préconditions**
 
-    - image2test, imageMin et les éléments de imagesref sont les listes
-    - image2test et les éléments de imagesref ont le même nombre de pixels
-    - image2test et imagesref ont des pixels dont le code est compris entre 0 et 255 à partir du second élément
+    * image2test, imageMin et les éléments de imagesref sont les listes
+    * image2test et les éléments de imagesref ont le même nombre de pixels
+    * image2test et imagesref ont des pixels dont le code est compris entre 0 et 255 à partir du second élément
 
     **Postconditions**
 
-    - la sortie est un booléen
+    * la sortie est un booléen
+
+    **Sortie**
+
+    * Un booléen
 
     &#34;&#34;&#34;
     pass
@@ -113,23 +118,27 @@ def plusProcheVoisin(image2test:list,imagesref:list)-&gt;list:
 
     **Paramètres** 
     
-    - image2test est une liste d&#39;entiers dont le premier élément est un ?
-    - imagesref est une liste de listes dont le premier élément  vaut 3 ou 7 
+    * image2test est une liste d&#39;entiers dont le premier élément est un ?
+    * imagesref est une liste de listes dont le premier élément  vaut 3 ou 7 
 
     **Préconditions** 
 
-    - image2test et les éléments de imagesref sont les listes
-    - image2test et les éléments de imagesref ont le même nombre de pixels
-    - image2test et imagesref ont des pixels dont le code est compris entre 0 et 255 à partir du second élément
+    * image2test et les éléments de imagesref sont les listes
+    * image2test et les éléments de imagesref ont le même nombre de pixels
+    * image2test et imagesref ont des pixels dont le code est compris entre 0 et 255 à partir du second élément
 
     **Postconsitions** 
     
-    - La sortie est un tableau de deux éléments
-    - le premier est une liste dont tous les éléments sont des codes entre 0 et 255
-    - le second un entier compris entre 0 et la taille de imagesref    
-    - La distance avec image2test est minimale
+    * La sortie est un tableau de deux éléments
+    * le premier est une liste dont tous les éléments sont des codes entre 0 et 255
+    * le second un entier compris entre 0 et la taille de imagesref    
+    * La distance avec image2test est minimale
 
-    **Sorties** le plus proche voisin parmi les images de référence et son indice dans imagesref
+    **Sorties** 
+    Un tableau contenant :
+
+    * le plus proche voisin parmi les images de référence
+    * son indice dans imagesref
     &#34;&#34;&#34;
     pass
 
@@ -172,18 +181,20 @@ def affichage3ou7(image:list)-&gt;str:
 
     **Paramètres** 
     
-    - image : une liste contenant le plus proche voisin d&#39;une image à tester    
+    * image : une liste contenant le plus proche voisin d&#39;une image à tester    
 
     **Préconditions** 
     
-    - image est une liste
-    - le premier élément de image vaut 3 ou 7
+    * image est une liste
+    * le premier élément de image vaut 3 ou 7
 
     **Postconsitions**
 
-    - la sortie est une chaine qui vaur &#39; est un 3&#39; ou &#39; est un  7&#39;
+    * la sortie est une chaine qui vaur &#39; est un 3&#39; ou &#39; est un  7&#39;
 
-    **Sorties** Une chaine de caractère indiquant ce qu&#39;est l&#39;image, un 3 ou un 7
+    **Sortie** 
+    
+    * Une chaine de caractère indiquant ce qu&#39;est l&#39;image, un 3 ou un 7
     &#34;&#34;&#34;
     pass
 
@@ -209,21 +220,25 @@ def cinqPlusProchesVoisins(image2test:list,imagesref:list)-&gt;list:
 
     **Paramètres** 
     
-    - image2test une liste d&#39;entiers sauf le premier élément qui est &#39;?&#39;
-    - imagesref une liste de listes dont le premier élément  est &#39;3&#39; ou &#39;7&#39; 
+    * image2test une liste d&#39;entiers sauf le premier élément qui est &#39;?&#39;
+    * imagesref une liste de listes dont le premier élément  est &#39;3&#39; ou &#39;7&#39; 
 
     **Préconditions** 
 
-    - image2test et les éléments de imagesref sont les listes
-    - image2test et les éléments de imagesref ont le même nombre de pixels
-    - image2test et imagesref ont des pixels dont le code est compris entre 0 et 255 à partir du second élément    
+    * image2test et les éléments de imagesref sont les listes
+    * image2test et les éléments de imagesref ont le même nombre de pixels
+    * image2test et imagesref ont des pixels dont le code est compris entre 0 et 255 à partir du second élément    
 
     **Postconsitions**
 
-    - La sortie est un tableau de cinq éléments
-    - chaque élément est une liste dont tous les éléments sauf le premier sont des codes entre 0 et 255
+    * La sortie est un tableau de cinq éléments
+    * chaque élément est une liste dont tous les éléments sauf le premier sont des codes entre 0 et 255
 
-    **Sorties** les 5 plus proches voisins parmi les images de référence
+    **Sorties** 
+    Un tableau de tableaux contenant :
+    
+    * les 5 plus proches voisins parmi les images de référence
+    * leurs indices dans imagesref
     &#34;&#34;&#34;
     pass
 
@@ -265,20 +280,22 @@ def plusDe3ou7(five_ppv_image2test:list)-&gt;str:
 
     **Paramètres** 
     
-    - five_ppv_image2test la liste des 5 plus proches voisins d&#39;une liste à tester 
+    * five_ppv_image2test la liste des 5 plus proches voisins d&#39;une liste à tester 
     
     **Préconditions** 
     
-    - five_ppv_image2test est une liste de 5 listes
-    - chacune des listes est une liste de codes de gris
-    - le premier éléments de chaque liste est un 3 ou un 7
+    * five_ppv_image2test est une liste de 5 listes
+    * chacune des listes est une liste de codes de gris
+    * le premier éléments de chaque liste est un 3 ou un 7
 
     **Postconsitions**
     
-    - la sortie est une chaine qui vaur &#39; est un 3&#39; ou &#39; est un  7&#39;
+    * la sortie est une chaine qui vaur &#39; est un 3&#39; ou &#39; est un  7&#39;
 
 
-    **Sorties** Une chaine de caracteres
+    **Sortie**
+    
+    * Une chaine de caracteres
     &#34;&#34;&#34;
     pass
 
@@ -380,7 +397,10 @@ if __name__==&#34;__main__&#34;:
 <li>la sortie est une chaine qui vaur ' est un 3' ou ' est un
 7'</li>
 </ul>
-<p><strong>Sorties</strong> Une chaine de caractère indiquant ce qu'est l'image, un 3 ou un 7</p></div>
+<p><strong>Sortie</strong> </p>
+<ul>
+<li>Une chaine de caractère indiquant ce qu'est l'image, un 3 ou un 7</li>
+</ul></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -391,18 +411,20 @@ if __name__==&#34;__main__&#34;:
 
     **Paramètres** 
     
-    - image : une liste contenant le plus proche voisin d&#39;une image à tester    
+    * image : une liste contenant le plus proche voisin d&#39;une image à tester    
 
     **Préconditions** 
     
-    - image est une liste
-    - le premier élément de image vaut 3 ou 7
+    * image est une liste
+    * le premier élément de image vaut 3 ou 7
 
     **Postconsitions**
 
-    - la sortie est une chaine qui vaur &#39; est un 3&#39; ou &#39; est un  7&#39;
+    * la sortie est une chaine qui vaur &#39; est un 3&#39; ou &#39; est un  7&#39;
 
-    **Sorties** Une chaine de caractère indiquant ce qu&#39;est l&#39;image, un 3 ou un 7
+    **Sortie** 
+    
+    * Une chaine de caractère indiquant ce qu&#39;est l&#39;image, un 3 ou un 7
     &#34;&#34;&#34;
     pass
 
@@ -446,7 +468,12 @@ est '3' ou '7' </li>
 <li>La sortie est un tableau de cinq éléments</li>
 <li>chaque élément est une liste dont tous les éléments sauf le premier sont des codes entre 0 et 255</li>
 </ul>
-<p><strong>Sorties</strong> les 5 plus proches voisins parmi les images de référence</p></div>
+<p><strong>Sorties</strong>
+Un tableau de tableaux contenant :</p>
+<ul>
+<li>les 5 plus proches voisins parmi les images de référence</li>
+<li>leurs indices dans imagesref</li>
+</ul></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -457,21 +484,25 @@ est '3' ou '7' </li>
 
     **Paramètres** 
     
-    - image2test une liste d&#39;entiers sauf le premier élément qui est &#39;?&#39;
-    - imagesref une liste de listes dont le premier élément  est &#39;3&#39; ou &#39;7&#39; 
+    * image2test une liste d&#39;entiers sauf le premier élément qui est &#39;?&#39;
+    * imagesref une liste de listes dont le premier élément  est &#39;3&#39; ou &#39;7&#39; 
 
     **Préconditions** 
 
-    - image2test et les éléments de imagesref sont les listes
-    - image2test et les éléments de imagesref ont le même nombre de pixels
-    - image2test et imagesref ont des pixels dont le code est compris entre 0 et 255 à partir du second élément    
+    * image2test et les éléments de imagesref sont les listes
+    * image2test et les éléments de imagesref ont le même nombre de pixels
+    * image2test et imagesref ont des pixels dont le code est compris entre 0 et 255 à partir du second élément    
 
     **Postconsitions**
 
-    - La sortie est un tableau de cinq éléments
-    - chaque élément est une liste dont tous les éléments sauf le premier sont des codes entre 0 et 255
+    * La sortie est un tableau de cinq éléments
+    * chaque élément est une liste dont tous les éléments sauf le premier sont des codes entre 0 et 255
 
-    **Sorties** les 5 plus proches voisins parmi les images de référence
+    **Sorties** 
+    Un tableau de tableaux contenant :
+    
+    * les 5 plus proches voisins parmi les images de référence
+    * leurs indices dans imagesref
     &#34;&#34;&#34;
     pass
 
@@ -529,6 +560,10 @@ est inférieure ou égale à chaque distance entre image2test et un élément de
 <p><strong>Postconditions</strong></p>
 <ul>
 <li>la sortie est un booléen</li>
+</ul>
+<p><strong>Sortie</strong></p>
+<ul>
+<li>Un booléen</li>
 </ul></div>
 <details class="source">
 <summary>
@@ -541,19 +576,23 @@ est inférieure ou égale à chaque distance entre image2test et un élément de
 
     **Paramètres**
 
-    - image2test est une liste d&#39;entiers dont le premier élément est un &#39;?&#39;
-    - imageMin est une liste dont il faut tester si la distance à image2test est minimale
-    - imagesref est l&#39;échantillon d&#39;images de référence
+    * image2test est une liste d&#39;entiers dont le premier élément est un &#39;?&#39;
+    * imageMin est une liste dont il faut tester si la distance à image2test est minimale
+    * imagesref est l&#39;échantillon d&#39;images de référence
 
     **Préconditions**
 
-    - image2test, imageMin et les éléments de imagesref sont les listes
-    - image2test et les éléments de imagesref ont le même nombre de pixels
-    - image2test et imagesref ont des pixels dont le code est compris entre 0 et 255 à partir du second élément
+    * image2test, imageMin et les éléments de imagesref sont les listes
+    * image2test et les éléments de imagesref ont le même nombre de pixels
+    * image2test et imagesref ont des pixels dont le code est compris entre 0 et 255 à partir du second élément
 
     **Postconditions**
 
-    - la sortie est un booléen
+    * la sortie est un booléen
+
+    **Sortie**
+
+    * Un booléen
 
     &#34;&#34;&#34;
     pass
@@ -608,7 +647,10 @@ est inférieure ou égale à chaque distance entre image2test et un élément de
 <li>la sortie est une chaine qui vaur ' est un 3' ou ' est un
 7'</li>
 </ul>
-<p><strong>Sorties</strong> Une chaine de caracteres</p></div>
+<p><strong>Sortie</strong></p>
+<ul>
+<li>Une chaine de caracteres</li>
+</ul></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -619,20 +661,22 @@ est inférieure ou égale à chaque distance entre image2test et un élément de
 
     **Paramètres** 
     
-    - five_ppv_image2test la liste des 5 plus proches voisins d&#39;une liste à tester 
+    * five_ppv_image2test la liste des 5 plus proches voisins d&#39;une liste à tester 
     
     **Préconditions** 
     
-    - five_ppv_image2test est une liste de 5 listes
-    - chacune des listes est une liste de codes de gris
-    - le premier éléments de chaque liste est un 3 ou un 7
+    * five_ppv_image2test est une liste de 5 listes
+    * chacune des listes est une liste de codes de gris
+    * le premier éléments de chaque liste est un 3 ou un 7
 
     **Postconsitions**
     
-    - la sortie est une chaine qui vaur &#39; est un 3&#39; ou &#39; est un  7&#39;
+    * la sortie est une chaine qui vaur &#39; est un 3&#39; ou &#39; est un  7&#39;
 
 
-    **Sorties** Une chaine de caracteres
+    **Sortie**
+    
+    * Une chaine de caracteres
     &#34;&#34;&#34;
     pass
 
@@ -690,7 +734,12 @@ vaut 3 ou 7 </li>
 </li>
 <li>La distance avec image2test est minimale</li>
 </ul>
-<p><strong>Sorties</strong> le plus proche voisin parmi les images de référence et son indice dans imagesref</p></div>
+<p><strong>Sorties</strong>
+Un tableau contenant :</p>
+<ul>
+<li>le plus proche voisin parmi les images de référence</li>
+<li>son indice dans imagesref</li>
+</ul></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -701,23 +750,27 @@ vaut 3 ou 7 </li>
 
     **Paramètres** 
     
-    - image2test est une liste d&#39;entiers dont le premier élément est un ?
-    - imagesref est une liste de listes dont le premier élément  vaut 3 ou 7 
+    * image2test est une liste d&#39;entiers dont le premier élément est un ?
+    * imagesref est une liste de listes dont le premier élément  vaut 3 ou 7 
 
     **Préconditions** 
 
-    - image2test et les éléments de imagesref sont les listes
-    - image2test et les éléments de imagesref ont le même nombre de pixels
-    - image2test et imagesref ont des pixels dont le code est compris entre 0 et 255 à partir du second élément
+    * image2test et les éléments de imagesref sont les listes
+    * image2test et les éléments de imagesref ont le même nombre de pixels
+    * image2test et imagesref ont des pixels dont le code est compris entre 0 et 255 à partir du second élément
 
     **Postconsitions** 
     
-    - La sortie est un tableau de deux éléments
-    - le premier est une liste dont tous les éléments sont des codes entre 0 et 255
-    - le second un entier compris entre 0 et la taille de imagesref    
-    - La distance avec image2test est minimale
+    * La sortie est un tableau de deux éléments
+    * le premier est une liste dont tous les éléments sont des codes entre 0 et 255
+    * le second un entier compris entre 0 et la taille de imagesref    
+    * La distance avec image2test est minimale
 
-    **Sorties** le plus proche voisin parmi les images de référence et son indice dans imagesref
+    **Sorties** 
+    Un tableau contenant :
+
+    * le plus proche voisin parmi les images de référence
+    * son indice dans imagesref
     &#34;&#34;&#34;
     pass
 

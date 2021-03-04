@@ -46,13 +46,23 @@ def ecart(code1:int,code2:int)-&gt;int:
     &#34;&#34;&#34;
     Fonction qui retourne l&#39;écart entre deux codes dégradés de gris.
 
-    **Paramètres** code1 et code2 deux entiers 
+    **Paramètres** 
 
-    **Préconditions** code1 et code2 sont des codes de dégradés de gris compris entre 0 et 255    
+    * code1 est un entier
+    * code2 est un entier
 
-    **Postconsitions** la fonction retourne un nombre positif
+    **Préconditions** 
+    
+    * code1 est un code de dégradés de gris compris entre 0 et 255    
+    * code2 est un code de dégradés de gris compris entre 0 et 255    
 
-    **Sorties** l&#39;écart positif entre les codes de dégradés de gris    
+    **Postconsitions** 
+    
+    * la fonction retourne un nombre positif
+
+    **Sortie** 
+    
+    * l&#39;écart positif entre les codes de dégradés de gris    
     &#34;&#34;&#34;
     pass
 
@@ -77,18 +87,25 @@ def distance(image2test:list,imageref:list)-&gt;int:
     &#34;&#34;&#34;
     Fonction qui retourne la somme des écarts (positifs) entre les pixels, pris deux à deux, de deux images en dégradés de gris.
 
-    **Paramètres** image2test et imageref deux listes d&#39;entiers
+    **Paramètres** 
+    
+    * image2test est une liste d&#39;entiers
+    * imageref est une liste d&#39;entiers
 
     **Préconditions** 
 
-    - image2test et imageref sont des listes
-    - image2test et imageref ont le même nombre de pixels
-    - image2test et imageref ont des pixels dont le code est compris entre 0 et 255
+    * image2test et imageref sont des listes
+    * image2test et imageref ont le même nombre de pixels
+    * image2test et imageref ont des pixels dont le code est compris entre 0 et 255
 
 
-    **Postconsitions** la fonction retourne un nombre positif
+    **Postconsition** 
+    
+    * la fonction retourne un nombre positif
 
-    **Sorties** la distance qui vaut la somme des écarts positifs des pixels pris deux à deux
+    **Sortie** 
+    
+    * la distance qui vaut la somme des écarts positifs des pixels pris deux à deux
     &#34;&#34;&#34;
     pass
 
@@ -153,15 +170,25 @@ if __name__==&#34;__main__&#34;:
 </code></dt>
 <dd>
 <div class="desc"><p>Fonction qui retourne la somme des écarts (positifs) entre les pixels, pris deux à deux, de deux images en dégradés de gris.</p>
-<p><strong>Paramètres</strong> image2test et imageref deux listes d'entiers</p>
+<p><strong>Paramètres</strong> </p>
+<ul>
+<li>image2test est une liste d'entiers</li>
+<li>imageref est une liste d'entiers</li>
+</ul>
 <p><strong>Préconditions</strong> </p>
 <ul>
 <li>image2test et imageref sont des listes</li>
 <li>image2test et imageref ont le même nombre de pixels</li>
 <li>image2test et imageref ont des pixels dont le code est compris entre 0 et 255</li>
 </ul>
-<p><strong>Postconsitions</strong> la fonction retourne un nombre positif</p>
-<p><strong>Sorties</strong> la distance qui vaut la somme des écarts positifs des pixels pris deux à deux</p></div>
+<p><strong>Postconsition</strong> </p>
+<ul>
+<li>la fonction retourne un nombre positif</li>
+</ul>
+<p><strong>Sortie</strong> </p>
+<ul>
+<li>la distance qui vaut la somme des écarts positifs des pixels pris deux à deux</li>
+</ul></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -170,18 +197,25 @@ if __name__==&#34;__main__&#34;:
     &#34;&#34;&#34;
     Fonction qui retourne la somme des écarts (positifs) entre les pixels, pris deux à deux, de deux images en dégradés de gris.
 
-    **Paramètres** image2test et imageref deux listes d&#39;entiers
+    **Paramètres** 
+    
+    * image2test est une liste d&#39;entiers
+    * imageref est une liste d&#39;entiers
 
     **Préconditions** 
 
-    - image2test et imageref sont des listes
-    - image2test et imageref ont le même nombre de pixels
-    - image2test et imageref ont des pixels dont le code est compris entre 0 et 255
+    * image2test et imageref sont des listes
+    * image2test et imageref ont le même nombre de pixels
+    * image2test et imageref ont des pixels dont le code est compris entre 0 et 255
 
 
-    **Postconsitions** la fonction retourne un nombre positif
+    **Postconsition** 
+    
+    * la fonction retourne un nombre positif
 
-    **Sorties** la distance qui vaut la somme des écarts positifs des pixels pris deux à deux
+    **Sortie** 
+    
+    * la distance qui vaut la somme des écarts positifs des pixels pris deux à deux
     &#34;&#34;&#34;
     pass
 
@@ -215,11 +249,26 @@ if __name__==&#34;__main__&#34;:
 </code></dt>
 <dd>
 <div class="desc"><p>Fonction qui retourne l'écart entre deux codes dégradés de gris.</p>
-<p><strong>Paramètres</strong> code1 et code2 deux entiers </p>
-<p><strong>Préconditions</strong> code1 et code2 sont des codes de dégradés de gris compris entre 0 et 255
-</p>
-<p><strong>Postconsitions</strong> la fonction retourne un nombre positif</p>
-<p><strong>Sorties</strong> l'écart positif entre les codes de dégradés de gris</p></div>
+<p><strong>Paramètres</strong> </p>
+<ul>
+<li>code1 est un entier</li>
+<li>code2 est un entier</li>
+</ul>
+<p><strong>Préconditions</strong> </p>
+<ul>
+<li>code1 est un code de dégradés de gris compris entre 0 et 255
+</li>
+<li>code2 est un code de dégradés de gris compris entre 0 et 255
+</li>
+</ul>
+<p><strong>Postconsitions</strong> </p>
+<ul>
+<li>la fonction retourne un nombre positif</li>
+</ul>
+<p><strong>Sortie</strong> </p>
+<ul>
+<li>l'écart positif entre les codes de dégradés de gris</li>
+</ul></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
@@ -228,13 +277,23 @@ if __name__==&#34;__main__&#34;:
     &#34;&#34;&#34;
     Fonction qui retourne l&#39;écart entre deux codes dégradés de gris.
 
-    **Paramètres** code1 et code2 deux entiers 
+    **Paramètres** 
 
-    **Préconditions** code1 et code2 sont des codes de dégradés de gris compris entre 0 et 255    
+    * code1 est un entier
+    * code2 est un entier
 
-    **Postconsitions** la fonction retourne un nombre positif
+    **Préconditions** 
+    
+    * code1 est un code de dégradés de gris compris entre 0 et 255    
+    * code2 est un code de dégradés de gris compris entre 0 et 255    
 
-    **Sorties** l&#39;écart positif entre les codes de dégradés de gris    
+    **Postconsitions** 
+    
+    * la fonction retourne un nombre positif
+
+    **Sortie** 
+    
+    * l&#39;écart positif entre les codes de dégradés de gris    
     &#34;&#34;&#34;
     pass
 

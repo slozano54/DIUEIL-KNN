@@ -14,6 +14,7 @@ pass
 import sys
 import copy
 
+#On fait les imports selon le contexte
 if __name__=="__main__":
     from distance import *
 else:
@@ -26,19 +27,23 @@ def isDistanceMin(image2test:list,imageMin:list,imagesref:list)->bool:
 
     **Paramètres**
 
-    - image2test est une liste d'entiers dont le premier élément est un '?'
-    - imageMin est une liste dont il faut tester si la distance à image2test est minimale
-    - imagesref est l'échantillon d'images de référence
+    * image2test est une liste d'entiers dont le premier élément est un '?'
+    * imageMin est une liste dont il faut tester si la distance à image2test est minimale
+    * imagesref est l'échantillon d'images de référence
 
     **Préconditions**
 
-    - image2test, imageMin et les éléments de imagesref sont les listes
-    - image2test et les éléments de imagesref ont le même nombre de pixels
-    - image2test et imagesref ont des pixels dont le code est compris entre 0 et 255 à partir du second élément
+    * image2test, imageMin et les éléments de imagesref sont les listes
+    * image2test et les éléments de imagesref ont le même nombre de pixels
+    * image2test et imagesref ont des pixels dont le code est compris entre 0 et 255 à partir du second élément
 
     **Postconditions**
 
-    - la sortie est un booléen
+    * la sortie est un booléen
+
+    **Sortie**
+
+    * Un booléen
 
     """
     pass
@@ -78,23 +83,27 @@ def plusProcheVoisin(image2test:list,imagesref:list)->list:
 
     **Paramètres** 
     
-    - image2test est une liste d'entiers dont le premier élément est un ?
-    - imagesref est une liste de listes dont le premier élément  vaut 3 ou 7 
+    * image2test est une liste d'entiers dont le premier élément est un ?
+    * imagesref est une liste de listes dont le premier élément  vaut 3 ou 7 
 
     **Préconditions** 
 
-    - image2test et les éléments de imagesref sont les listes
-    - image2test et les éléments de imagesref ont le même nombre de pixels
-    - image2test et imagesref ont des pixels dont le code est compris entre 0 et 255 à partir du second élément
+    * image2test et les éléments de imagesref sont les listes
+    * image2test et les éléments de imagesref ont le même nombre de pixels
+    * image2test et imagesref ont des pixels dont le code est compris entre 0 et 255 à partir du second élément
 
     **Postconsitions** 
     
-    - La sortie est un tableau de deux éléments
-    - le premier est une liste dont tous les éléments sont des codes entre 0 et 255
-    - le second un entier compris entre 0 et la taille de imagesref    
-    - La distance avec image2test est minimale
+    * La sortie est un tableau de deux éléments
+    * le premier est une liste dont tous les éléments sont des codes entre 0 et 255
+    * le second un entier compris entre 0 et la taille de imagesref    
+    * La distance avec image2test est minimale
 
-    **Sorties** le plus proche voisin parmi les images de référence et son indice dans imagesref
+    **Sorties** 
+    Un tableau contenant :
+
+    * le plus proche voisin parmi les images de référence
+    * son indice dans imagesref
     """
     pass
 
@@ -137,18 +146,20 @@ def affichage3ou7(image:list)->str:
 
     **Paramètres** 
     
-    - image : une liste contenant le plus proche voisin d'une image à tester    
+    * image : une liste contenant le plus proche voisin d'une image à tester    
 
     **Préconditions** 
     
-    - image est une liste
-    - le premier élément de image vaut 3 ou 7
+    * image est une liste
+    * le premier élément de image vaut 3 ou 7
 
     **Postconsitions**
 
-    - la sortie est une chaine qui vaur ' est un 3' ou ' est un  7'
+    * la sortie est une chaine qui vaur ' est un 3' ou ' est un  7'
 
-    **Sorties** Une chaine de caractère indiquant ce qu'est l'image, un 3 ou un 7
+    **Sortie** 
+    
+    * Une chaine de caractère indiquant ce qu'est l'image, un 3 ou un 7
     """
     pass
 
@@ -174,21 +185,25 @@ def cinqPlusProchesVoisins(image2test:list,imagesref:list)->list:
 
     **Paramètres** 
     
-    - image2test une liste d'entiers sauf le premier élément qui est '?'
-    - imagesref une liste de listes dont le premier élément  est '3' ou '7' 
+    * image2test une liste d'entiers sauf le premier élément qui est '?'
+    * imagesref une liste de listes dont le premier élément  est '3' ou '7' 
 
     **Préconditions** 
 
-    - image2test et les éléments de imagesref sont les listes
-    - image2test et les éléments de imagesref ont le même nombre de pixels
-    - image2test et imagesref ont des pixels dont le code est compris entre 0 et 255 à partir du second élément    
+    * image2test et les éléments de imagesref sont les listes
+    * image2test et les éléments de imagesref ont le même nombre de pixels
+    * image2test et imagesref ont des pixels dont le code est compris entre 0 et 255 à partir du second élément    
 
     **Postconsitions**
 
-    - La sortie est un tableau de cinq éléments
-    - chaque élément est une liste dont tous les éléments sauf le premier sont des codes entre 0 et 255
+    * La sortie est un tableau de cinq éléments
+    * chaque élément est une liste dont tous les éléments sauf le premier sont des codes entre 0 et 255
 
-    **Sorties** les 5 plus proches voisins parmi les images de référence
+    **Sorties** 
+    Un tableau de tableaux contenant :
+    
+    * les 5 plus proches voisins parmi les images de référence
+    * leurs indices dans imagesref
     """
     pass
 
@@ -230,20 +245,22 @@ def plusDe3ou7(five_ppv_image2test:list)->str:
 
     **Paramètres** 
     
-    - five_ppv_image2test la liste des 5 plus proches voisins d'une liste à tester 
+    * five_ppv_image2test la liste des 5 plus proches voisins d'une liste à tester 
     
     **Préconditions** 
     
-    - five_ppv_image2test est une liste de 5 listes
-    - chacune des listes est une liste de codes de gris
-    - le premier éléments de chaque liste est un 3 ou un 7
+    * five_ppv_image2test est une liste de 5 listes
+    * chacune des listes est une liste de codes de gris
+    * le premier éléments de chaque liste est un 3 ou un 7
 
     **Postconsitions**
     
-    - la sortie est une chaine qui vaur ' est un 3' ou ' est un  7'
+    * la sortie est une chaine qui vaur ' est un 3' ou ' est un  7'
 
 
-    **Sorties** Une chaine de caracteres
+    **Sortie**
+    
+    * Une chaine de caracteres
     """
     pass
 
