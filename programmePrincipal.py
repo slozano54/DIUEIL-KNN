@@ -15,7 +15,9 @@ pass
 # Pour mesurer le temps de traitement du script
 from datetime import datetime 
 # Pour copier les variable
-import copy 
+import copy
+# Pour les commandes systeme
+import os 
 
 # Module knn
 from knn.distance import *
@@ -39,25 +41,53 @@ def main():
     listetesting = [ligne.split() for ligne in l2]
 
     # Affichages de sorties
+    os.system("clear")
     print("=============================================================================")    
-    print("Type de chaque image selon son plus proche voisin")    
-    print("-------------------------------------------------")    
-    print("")
-    for j in range(len(listetesting)):
-        print("Selon son plus proche voisin, l'image "+str(j+1)+affichage3ou7(plusProcheVoisin(listetesting[j],listetraining)))
-    print("=============================================================================")
-
+    print("=========================== PROJET KNN BLOC2 ================================")    
+    print("=============================================================================")    
+    isOneShot = ''
+    while isOneShot not in ['o','O','oui','Oui','OUI','n','N','non','Non','NON']:
+        isOneShot = input("Voulez-vous tester toutes les images en une seule fois (o/n) ? ")
+    
     print(".............................................................................")    
 
-    print("=============================================================================")    
-    print("Type de chaque image selon ses 5 plus proches voisins")
-    print("-----------------------------------------------------")    
-    print("")
-    for j in range(len(listetesting)):
-        print("Selon ses 5 plus proches voisins, l'image "+str(j+1)+plusDe3ou7(cinqPlusProchesVoisins(listetesting[j],listetraining)))
-    print("=============================================================================")    
+    if (isOneShot in ['o','O','oui','Oui','OUI']):
+        print("=============================================================================")
+        print("================================= TEST GLOBAL ===============================")    
+        print("=============================================================================")
+        print("Type de chaque image selon son plus proche voisin")    
+        print("-------------------------------------------------")    
+        print("")
+        for j in range(len(listetesting)):
+            print("Selon son plus proche voisin, l'image "+str(j+1)+affichage3ou7(plusProcheVoisin(listetesting[j],listetraining)))
+        print("=============================================================================")
 
-    print(".............................................................................")    
+        print(".............................................................................")    
+
+        print("=============================================================================")    
+        print("Type de chaque image selon ses 5 plus proches voisins")
+        print("-----------------------------------------------------")    
+        print("")
+        for j in range(len(listetesting)):
+            print("Selon ses 5 plus proches voisins, l'image "+str(j+1)+plusDe3ou7(cinqPlusProchesVoisins(listetesting[j],listetraining)))
+        print("=============================================================================")       
+    elif (isOneShot in ['n','N','non','Non','NON']):
+        num = 0
+        print("")    
+        print("=============================================================================")
+        print("================================ TEST PARTIEL ===============================")    
+        print("=============================================================================")
+        while num not in range(1,11):
+            num = int(input("Il n'y a que 10 images, quelle image voulez-vous tester (entre 1 et 10) ? "))        
+
+        print(".............................................................................")    
+
+        print("Selon son plus proche voisin, l'image "+str(num)+affichage3ou7(plusProcheVoisin(listetesting[num-1],listetraining)))
+        print("")
+        print(".............................................................................")    
+        print("Selon ses 5 plus proches voisins, l'image "+str(num)+plusDe3ou7(cinqPlusProchesVoisins(listetesting[num-1],listetraining)))    
+        print("")
+        print(".............................................................................")    
 
     # On évalue le temps de traitement
     end_time = datetime.now()
